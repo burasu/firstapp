@@ -1,0 +1,22 @@
+{
+  "name": "firstapp",
+  "version": "0.0.1",
+  "description": "Primera aplicación en AngularJS",
+  "bugs": {
+    "url": "https://github.com/burasu/firstapp/issues",
+    "email": "burasu@gmail.com"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Blas Fernandez",
+    "email": "burasu@gmail.com",
+    "url": "http://blasfernandez.es"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/burasu/firstapp"
+  },
+  "dependencies": {},
+  "devDependencies": {
+  }
+}
