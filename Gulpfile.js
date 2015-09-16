@@ -128,6 +128,8 @@ gulp.task('copy', function() {
     gulp.src('./app/index.html')
         .pipe(useref())
         .pipe(gulp.dest('./dist'));
+    gulp.src('./app/img/**')
+        .pipe(gulp.dest('./dist/img'));
     gulp.src('./app/lib/font-awesome/fonts/**')
         .pipe(gulp.dest('./dist/fonts'));
 });
