@@ -128,8 +128,8 @@ gulp.task('copy', function() {
     gulp.src('./app/index.html')
         .pipe(useref())
         .pipe(gulp.dest('./dist'));
-//    gulp.src('./app/lib/font-awesome/fonts/**')
-//        .pipe(gulp.dest('./dist/fonts'));
+    gulp.src('./app/lib/font-awesome/fonts/**')
+        .pipe(gulp.dest('./dist/fonts'));
 });
 
 // Vigila cambios que se produzcan en el código

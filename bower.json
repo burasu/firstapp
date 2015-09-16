@@ -3,5 +3,8 @@
   "version": "0.0.1",
   "description": "Primera aplicación en AngularJS",
   "dependeincies": {},
-  "dependencies": {}
+  "dependencies": {
+    "angular": "~1.4.5",
+    "bootstrap": "~3.3.5"
+  }
 }
