@@ -7,6 +7,7 @@
         <meta name="description" content="" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+        <link href='https://fonts.googleapis.com/css?family=Roboto:500,300,700,400' rel='stylesheet' type='text/css'>
         <!-- build:css css/style.min.css -->
         <!-- bower:css -->
         <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css" />
@@ -16,7 +17,7 @@
         <!-- endinject -->
         <!-- endbuild -->
     </head>
-    <body ng-app>
+    <body ng-app="myApp">
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -25,25 +26,24 @@
         <div class="header">
             <div class="container">
                 <h1>Book End</h1>
-                <h2>Tienda virtual</h2>
             </div>
         </div>
 
         <div class="main">
-            <div class="container">
+            <div class="container" ng-controller="MainController">
 
-                <h1>Titulo</h1>
-                <h2>promocion</h2>
+                <h1>{{ title }}</h1>
+                <h2>{{ promo }}</h2>
 
-                <div class="col-md-6">
+                <div class="col-md-6" ng-repeat="product in products">
                     <div class="thumbnail">
-                        <img ng-src="img/program-or-be-programmed.jpg">
-                        <p class="title">Libro</p>
-                        <p class="price">15$</p>
-                        <p class="date">12/12/2015</p>
+                        <img ng-src="{{ product.cover }}">
+                        <p class="title">{{ product.name }}</p>
+                        <p class="price">{{ product.price | currency }}</p>
+                        <p class="date">{{ product.pubdate | date }}</p>
                         <div class="rating">
-                            <p class="likes">+ 5</p>
-                            <p class="dislikes">- 5</p>
+                            <p class="likes" ng-click="plusOne($index)">+ {{ product.likes }}</p>
+                            <p class="dislikes" ng-click="minusOne($index)">- {{ product.dislikes }}</p>
                         </div>
                     </div>
                 </div>
@@ -78,6 +78,8 @@
         <!-- endbuild -->
         <!-- build:js js/app.min.js -->
         <!-- inject:js -->
+        <script src="/scripts/controllers.js"></script>
+        <script src="/scripts/app.js"></script>
         <!-- endinject -->
         <!-- endbuild -->
     </body>
