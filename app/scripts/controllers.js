@@ -45,9 +45,17 @@
 
         $scope.plusOne = function(index) {
             $scope.products[index].likes += 1;
+            if ($scope.products[index].dislikes != 0)
+            {
+                $scope.products[index].dislikes -= 1;
+            }
         };
 
         $scope.minusOne = function(index) {
+            if ($scope.products[index].likes != 0)
+            {
+                $scope.products[index].likes -= 1;
+            }
             $scope.products[index].dislikes += 1;
         };
     }
